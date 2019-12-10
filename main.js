@@ -1,7 +1,7 @@
 let users = [];
 
 const addUser = (ev)=>{
-    ev.preventDefault();  //to stop the form submitting
+    ev.preventDefault();
     let user = {
         firstname: document.getElementById('firstname').value,
         lastname: document.getElementById('lastname').value,
@@ -10,13 +10,10 @@ const addUser = (ev)=>{
         pswrepeat: document.getElementById('pswrepeat').value
     }
     users.push(user);
-    // clear form for the next entry
     document.forms[0].reset();
 
-    //for display purposes
     console.warn('added' , {users} );
 
-    //saving to localStorage
     localStorage.setItem('UserList', JSON.stringify(users) );
 }
 
